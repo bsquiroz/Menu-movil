@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>nav</title>
+        <link rel="stylesheet" href="./css.css" />
+    </head>
+    <body>
+        <div class="X" id="X">X</div>
+        <nav class="active" id="active">
+            <span><a href="#home">Bsquiroz</a></span>
+            <ul id="menu-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <section class="section home" id="home"><h2>HOME</h2></section>
+        <section class="section about" id="about"><h2>ABOUT</h2></section>
+        <section class="section works" id="works"><h2>WORKS</h2></section>
+        <section class="section contact" id="contact"><h2>CONTACT</h2></section>
+
+        <script>
+            const $X = document.querySelector("#X");
+            const $ACTIVE = document.querySelector("#active");
+            const $UL = document.querySelectorAll("#menu-nav li a");
+
+            $UL.forEach((el) => {
+                el.addEventListener("click", () => {
+                    $ACTIVE.classList.toggle("active");
+                });
+            });
+
+            $X.addEventListener("click", (e) => {
+                $ACTIVE.classList.toggle("active");
+            });
+        </script>
+    </body>
+</html>
